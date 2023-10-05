@@ -16,7 +16,7 @@ for i in range(rows):
         row_buttons.append(button)
     button_grid.append(row_buttons)
 
-bank = tk.Button(root, text="Bank", height=5, width=10)
+
 
 # Start the tkinter main loop
 root.mainloop()
