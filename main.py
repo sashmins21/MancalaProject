@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Create the main tkinter window
 root = tk.Tk()
-root.title("Pallanguzi")
+root.title("Pallanguzhi")
 
 rows = 2
 cols = 7
