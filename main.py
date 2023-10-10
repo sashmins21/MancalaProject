@@ -12,11 +12,19 @@ rows = 2
 cols = 7
 button_grid = []
 
+# Define a function to add 4 shapes to a button
+def add_shapes(button):
+    for _ in range(4):
+        shape = tk.Canvas(button, width=20, height=20)
+        shape.create_rectangle(5, 5, 15, 15, fill="blue")  # Example shape (you can change it)
+        shape.pack(side="left")
+
 for i in range(rows):
     row_buttons = []
     for j in range(cols):
         button = tk.Button(root, text="B B B B", height=5, width=5)
         button.grid(row=i, column=j, padx=5, pady=5)
+        add_shapes(button)  # Add 4 shapes to each button
         row_buttons.append(button)
     button_grid.append(row_buttons)
 
