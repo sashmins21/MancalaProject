@@ -24,7 +24,6 @@ for i in range(rows):
         row_buttons.append(button)
     button_grid.append(row_buttons)
 
-# Initialize tkinter window with dimensions 650 x 500
 root.geometry('650x500')
 
 # Creating a Button
