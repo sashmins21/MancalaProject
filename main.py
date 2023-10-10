@@ -12,7 +12,7 @@ button_grid = []
 def add_shapes(button):
     for _ in range(4):
         shape = tk.Canvas(button, width=20, height=20)
-        shape.create_rectangle(5, 5, 15, 15, fill="blue")  # Example shape (you can change it)
+        shape.create_arc(5, 5, 15, 15, fill="blue")  # Example shape (you can change it)
         shape.pack(side="left")
 
 for i in range(rows):
