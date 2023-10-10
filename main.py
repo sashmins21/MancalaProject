@@ -16,21 +16,15 @@ for i in range(rows):
         row_buttons.append(button)
     button_grid.append(row_buttons)
 
-for i in range(14):
-    btn = button_grid[i]
-    btn.place(x=210, y=210)
-
-
-# Initialize tkinter window with dimensions 300 x 250
-root.geometry('500x500')
+# Initialize tkinter window with dimensions 650 x 500
+root.geometry('650x500')
 
 # Creating a Button
-btn = tk.Button(root, text="Store", height = 4, width=20)
+btn = tk.Button(root, text="Store", height=4, width=20)
+btn2 = tk.Button(root, text="Store", height=4, width=20)
 
-# Set the position of button to coordinate (100, 20)
-btn.place(x=210, y=210)
-
-
+btn.place(x=100, y=210)
+btn2.place(x=325, y=210)
 
 # Start the tkinter main loop
 root.mainloop()
