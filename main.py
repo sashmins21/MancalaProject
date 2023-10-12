@@ -13,7 +13,7 @@ seeds = 4
 
 
 def create_button(row,col):
-    button = tk.Button(root, text=seeds, height=5, width=5, command=lambda:move(row, col))
+    button = tk.Button(root, text="B B B B", height=5, width=5, command=lambda:move(row, col))
     button.grid(row=row, column=col, padx=5, pady=5)
     button_grid.append(button)
 
@@ -31,9 +31,11 @@ btn.place(x=100, y=200)
 btn2.place(x=325, y=200)
 
 def move(row, col):
-    button_grid[row * 7 + col].config(text=0)
+    button_grid[row * 7 + col].config(text="")
     for i in range(seeds):
-        button_grid[row*7 + col-i-1].config(text = "B")
+        current_text = str(button_grid[row*7 +col-i-1].cget("text")) # FIX THIS
+        button_grid[row*7 + col-i-1].config(text =current_text + " B")
+
 
 # Start the tkinter main loop
 root.mainloop()
