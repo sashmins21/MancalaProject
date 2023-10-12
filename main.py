@@ -9,20 +9,17 @@ cols = 7
 button_grid = []
 
 # Define a function to add 4 shapes to a button
-def add_shapes(button):
-    for _ in range(4):
-        shape = tk.Canvas(button, width=20, height=20)
-        shape.create_arc(5, 5, 15, 15, fill="blue")  # Example shape (you can change it)
-        shape.grid(row=0, column=_, padx=2, pady=2)
+seeds = 4
 
-for i in range(rows):
-    row_buttons = []
-    for j in range(cols):
-        button = tk.Button(root, text="", height=5, width=5)
-        button.grid(row=i, column=j, padx=5, pady=5)
-        add_shapes(button)  # Add 4 shapes to each button
-        row_buttons.append(button)
-    button_grid.append(row_buttons)
+
+def create_button(row,col):
+    button = tk.Button(root, text=seeds, height=5, width=5, command=lambda:move(row, col))
+    button.grid(row=row, column=col, padx=5, pady=5)
+    button_grid.append(button)
+
+for i in range(2):
+    for j in range(7):
+        create_button(i,j)
 
 # Initialize tkinter window with dimensions 650 x 500
 root.geometry('650x500')
@@ -31,8 +28,13 @@ root.geometry('650x500')
 btn = tk.Button(root, text="Button 1", height=4, width=20)
 btn2 = tk.Button(root, text="Button 2", height=4, width=20)
 
-btn.place(x=100, y=400)
-btn2.place(x=325, y=400)
+btn.place(x=100, y=200)
+btn2.place(x=325, y=200)
+
+def move(row, col):
+    button_grid[row * 7 + col].config(text=0)
+    for i in range(seeds):
+        button_grid[row*7 + col-i-1].config(text = "B")
 
 # Start the tkinter main loop
 root.mainloop()
