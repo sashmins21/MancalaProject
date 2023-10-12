@@ -21,7 +21,6 @@ for i in range(2):
     for j in range(7):
         create_button(i,j)
 
-# Initialize tkinter window with dimensions 650 x 500
 root.geometry('650x500')
 
 # Creating two Button labels on the canvas
