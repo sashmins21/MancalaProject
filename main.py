@@ -14,7 +14,7 @@ seeds = 4
 
 
 def create_button(row,col):
-    button = tk.Button(root, text="B B B B", height=5, width=5, command=lambda:move(row, col))
+    button = tk.Button(root, text="BBBB", height=5, width=5, command=lambda:move(row, col))
     button.grid(row=row, column=col, padx=5, pady=5)
     button_grid.append(button)
 
@@ -32,11 +32,10 @@ btn.place(x=100, y=200)
 btn2.place(x=325, y=200)
 
 def move(row, col):
-    button_grid[row * 7 + col].config(text="")
-    for i in range(seeds):
-        time.sleep(.25)
+    for i in range(len(button_grid[row * 7 + col].cget("text"))):
         current_text = str(button_grid[row*7 +col-i-1].cget("text")) # FIX THIS
-        button_grid[row*7 + col-i-1].config(text =current_text + " B")
+        button_grid[row*7 + col-i-1].config(text =current_text + "B")
+    button_grid[row * 7 + col].config(text="")
 
 
 
