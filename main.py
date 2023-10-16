@@ -34,8 +34,7 @@ btn2.place(x=325, y=200)
 def move(row, col):
     button_grid[row * 7 + col].config(text="")
     for i in range(seeds):
-        time.sleep(.25)
-        current_text = str(button_grid[row*7 +col-i-1].cget("text")) # FIX THIS
+        current_text = str(button_grid[row*7 + col-i-1].cget("text")) # FIX THIS
         button_grid[row*7 + col-i-1].config(text =current_text + " B")
 
 
