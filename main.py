@@ -39,8 +39,15 @@ def move(row, col):
         if i == len(button_grid[row * 7 + col].cget("text")) - 1:
             next_index = row * 7 + col - i
             if next_index % 7 != 6 and len(button_grid[next_index + 1].cget("text")) == 0:
-                btn.config(text = "HERRO")
+                prev_index = row * 7 + col - i - 1
+                while prev_index != next_index:
+                    current_text = str(button_grid[prev_index].cget("text"))
+                    btn_text = str(btn.cget("text"))
+                    btn.config(text=btn_text + current_text)
+                    button_grid[prev_index].config(text="")
+                    prev_index = (prev_index - 1) % 14
     button_grid[row * 7 + col].config(text="")
+
 
 
 
