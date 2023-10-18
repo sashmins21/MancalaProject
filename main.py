@@ -8,10 +8,6 @@ rows = 2
 cols = 7
 button_grid = []
 
-# Define a function to add 4 shapes to a button
-seeds = 4
-
-
 def create_button(row,col):
     button = tk.Button(root, text="OOOO", height=5, width=5, command=lambda:move(row, col))
     button.grid(row=row, column=col, padx=5, pady=5)
@@ -30,6 +26,7 @@ btn2 = tk.Button(root, text="Button 2", height=4, width=20)
 
 btn.place(x=100, y=200)
 btn2.place(x=325, y=200)
+
 
 def move(row, col):
     for i in range(len(button_grid[row * 7 + col].cget("text"))):
