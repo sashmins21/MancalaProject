@@ -7,6 +7,9 @@ root.title("Pallanguzhi")
 rows = 2
 cols = 7
 button_grid = []
+score = 0
+score2 = 0
+current_player = 1
 
 
 def create_button(row,col):
@@ -21,7 +24,7 @@ for i in range(2):
 
 root.geometry('650x500')
 
-# Creating two Button labels on the canvas
+# Creating three Button labels on the canvas
 btn = tk.Button(root, text="Button 1", height=4, width=20)
 btn2 = tk.Button(root, text="Button 2", height=4, width=20)
 btn3 = tk.Button(root, text="Player 1 Turn", height=2, width=10)
@@ -46,9 +49,7 @@ def move(row, col):
     button_grid[current_index].config(text="")
     button_grid[current_index].config(fg='black')
 
-score = 0
-score2 = 0
-current_player=1
+
 def increment_score(event):
     global score
     score += 1
