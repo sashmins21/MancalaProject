@@ -24,9 +24,11 @@ root.geometry('650x500')
 # Creating two Button labels on the canvas
 btn = tk.Button(root, text="Button 1", height=4, width=20)
 btn2 = tk.Button(root, text="Button 2", height=4, width=20)
+btn3 = tk.Button(root, text="Player 1 Turn", height=2, width=10)
 
 btn.place(x=100, y=200)
 btn2.place(x=325, y=200)
+btn3.place(x=250, y=280)
 
 
 def move(row, col):
@@ -46,6 +48,7 @@ def move(row, col):
 
 score = 0
 score2 = 0
+current_player=1
 def increment_score(event):
     global score
     score += 1
@@ -62,9 +65,20 @@ def increment_score(event):
 # Bind the 'T' key event to the increment_score function
 root.bind('p', increment_score)
 
+def switch_player():
+    global current_player
+    if current_player == 1:
+        btn3.config(text="Player 2 Turn")
+        current_player = 2
+    else:
+        btn3.config(text="Player 1 Turn")
+        current_player = 1
 
 def key_press(a):
     button_grid[int(a.char)].config(text="")
+    for i in range(14):
+        button_grid[i].config(fg='black')
+    switch_player()
 
 
 for i in range(10):
@@ -73,17 +87,30 @@ for i in range(10):
 def change_letter(a):
     if(a.char == 'z'):
         button_grid[10].config(text="")
+        for i in range(14):
+            button_grid[i].config(fg='black')
+        switch_player()
     if (a.char == 'x'):
         button_grid[11].config(text="")
+        for i in range(14):
+            button_grid[i].config(fg='black')
+        switch_player()
     if (a.char == 'c'):
         button_grid[12].config(text="")
+        for i in range(14):
+            button_grid[i].config(fg='black')
+        switch_player()
     if (a.char == 'v'):
         button_grid[13].config(text="")
+        for i in range(14):
+            button_grid[i].config(fg='black')
+        switch_player()
 
 root.bind('z', change_letter)
 root.bind('x', change_letter)
 root.bind('c', change_letter)
 root.bind('v', change_letter)
+
 
 # Start the tkinter main loop
 root.mainloop()
