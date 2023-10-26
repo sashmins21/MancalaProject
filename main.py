@@ -4,6 +4,7 @@ import tkinter as tk
 root = tk.Tk()
 root.title("Pallanguzhi")
 
+#instance variables
 rows = 2
 cols = 7
 button_grid = []
@@ -11,7 +12,7 @@ score = 0
 score2 = 0
 current_player = 1
 
-
+#Create a 2x7 grid
 def create_button(row,col):
     button = tk.Button(root, text="OOOO", height=5, width=5, command=lambda:move(row, col))
     button.grid(row=row, column=col, padx=5, pady=5)
@@ -25,8 +26,8 @@ for i in range(2):
 root.geometry('650x500')
 
 # Creating three Button labels on the canvas
-btn = tk.Button(root, text="Button 1", height=4, width=20)
-btn2 = tk.Button(root, text="Button 2", height=4, width=20)
+btn = tk.Button(root, text="Player 1", height=4, width=20)
+btn2 = tk.Button(root, text="Player 2", height=4, width=20)
 btn3 = tk.Button(root, text="Player 1 Turn", height=2, width=10)
 
 btn.place(x=100, y=200)
@@ -53,7 +54,7 @@ def move(row, col):
 def increment_score(event):
     global score
     score += 1
-    btn.config(text=f"Button 1 Score: {score}")
+    btn.config(text=f"Player 1 Score: {score}")
 
 # Bind the 'T' key event to the increment_score function
 root.bind('q', increment_score)
@@ -61,7 +62,7 @@ root.bind('q', increment_score)
 def increment_score(event):
     global score2
     score2 += 1
-    btn2.config(text=f"Button 2 Score: {score2}")
+    btn2.config(text=f"Player 2 Score: {score2}")
 
 # Bind the 'T' key event to the increment_score function
 root.bind('p', increment_score)
