@@ -52,7 +52,7 @@ def move(row,col):
                     prev_index = (prev_index - 1) % 14  # Wrap around the grid
     button_grid[row * 7 + col].config(text="")
 
-
+    
 
 
 
