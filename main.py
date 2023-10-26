@@ -1,5 +1,5 @@
 import tkinter as tk
-
+from tkinter import messagebox
 # Create the main tkinter window
 root = tk.Tk()
 root.title("Pallanguzhi")
@@ -55,6 +55,8 @@ def increment_score(event):
     global score
     score += 1
     btn.config(text=f"Player 1 Score: {score}")
+    if score >= 28:
+        messagebox.showinfo(title="Game Over", message="Player 1 WINS!")
 
 # Bind the 'T' key event to the increment_score function
 root.bind('q', increment_score)
@@ -63,7 +65,8 @@ def increment_score(event):
     global score2
     score2 += 1
     btn2.config(text=f"Player 2 Score: {score2}")
-
+    if score2 >= 28:
+        messagebox.showinfo(title="Game Over", message="Player 2 WINS!")
 # Bind the 'T' key event to the increment_score function
 root.bind('p', increment_score)
 
