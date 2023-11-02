@@ -58,18 +58,19 @@ def increment_score(event): #This adds one to the Player One score everytime 'p'
     if score >= 28:
         messagebox.showinfo(title="Game Over", message="Player 1 WINS!")
 
-# Bind the 'q' key event to the increment_score function
-root.bind('q', increment_score)
-
-# Bind the 'p' key event to the increment_score function
-root.bind('p', increment_score)
-
-def increment_score(event): #This adds one to the Player Two score everytime 'q' is pressed
+def increment_score2(event): #This adds one to the Player Two score everytime 'q' is pressed
     global score2
     score2 += 1
     btn2.config(text=f"Player 2 Score: {score2}")
     if score2 >= 28:
         messagebox.showinfo(title="Game Over", message="Player 2 WINS!")
+
+# Bind the 'q' key event to the increment_score function
+root.bind('q', increment_score)
+
+# Bind the 'p' key event to the increment_score function
+root.bind('p', increment_score2)
+
 
 def switch_player(): #This changes the player indicator on the button when a pit is cleared
     global current_player
